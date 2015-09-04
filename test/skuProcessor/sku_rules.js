@@ -5,23 +5,17 @@ var skuProcessor = require('../../lib/skuProcessor');
 var log = require('log4js').getLogger("skurulestest");
 
 describe('Calculate Sku Variations', function () {
-    var sc = {
-        "attributes": [
-            { "code": "alpha", "values": [{ "value": "A" }, { "value": "B" }, { "value": "C" }] },
-            { "code": "numeric", "values": [{ "value": "1" }, { "value": "2" }, { "value": "3" }] }
-        ],
-        "rules": [
-            {
-                attribute: "numeric",
-                tests: [
-                    { when: "x-alpha = 'A'", then: ["1", "2"] },
-                    { when: "x-alpha = 'B'", then: ["2", "3"] },
-                    { when: "x-alpha = 'C'", then: ["3"] }
-                ]
-            }
-        ]
-    };
-
+     var sc = {
+            "attributes": [
+                { "code": "alpha", "values": [{ "value": "A" }, { "value": "B" }, { "value": "C" }] },
+                { "code": "numeric", "values": [{ "value": "1" }, { "value": "2" }, { "value": "3" }] }
+            ],
+            "rules": [
+                { when: ["alpha", "A"], then: ["numeric", "1", "2"] },
+                { when: ["alpha", "B"], then: ["numeric", "2", "3"] },
+                { when: ["alpha", "C"], then: ["numeric", "3"] }
+            ]};
+                       
 
     it('Rules should filter unwanted options', function (done) {
         skuProcessor.processValidSkus(sc, function (validSkus) {
