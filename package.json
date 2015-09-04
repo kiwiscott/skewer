@@ -1,0 +1,20 @@
+{
+  "name": "sku-cloud",
+  "version": "1.0.0",
+  "description": "Sku Parser",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require should --reporter list --ui bdd --recursive --timeout 750000",
+    "test-debug": "mocha  --debug-brk --require should --reporter spec --ui bdd --recursive"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "dependencies": {
+    "async": "^1.4.2",
+    "log4js": "^0.6.26"
+  }
+}
