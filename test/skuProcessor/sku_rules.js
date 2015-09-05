@@ -4,6 +4,43 @@ var should = require('should');
 var skuProcessor = require('../../lib/skuProcessor');
 var log = require('log4js').getLogger("skurulestest");
 
+describe('Cannot Be Same Rule', function () {
+     var sc = {
+            "attributes": [
+                { "code": "alpha", "values": [{ "value": "A" }, { "value": "B" }, { "value": "C" }] },
+                { "code": "numeric", "values": [{ "value": "A" }, { "value": "B" }, { "value": "C" }] }
+            ],
+            "rules": [
+                { cannotBeSame: ["alpha", "numeric"] }
+            ]};
+                       
+
+    it('Rules should filter same options out', function (done) {
+        skuProcessor.processValidSkus(sc, function (validSkus) {
+            var skuCount = 6;
+            validSkus.length.should.equal(skuCount);
+            done();
+        });
+    });
+
+    it('Sku Matches should be', function (done) {
+        skuProcessor.processValidSkus(sc, function (validSkus) {
+            var expected = [
+                { alpha: 'A', numeric: 'B' },
+                { alpha: 'A', numeric: 'C' },
+                { alpha: 'B', numeric: 'A' },
+                { alpha: 'B', numeric: 'C' },
+                { alpha: 'C', numeric: 'A' },
+                { alpha: 'C', numeric: 'B' }];
+
+            for (var i = 0; i < expected.length; i++) {
+                validSkus.should.containEql(expected[i]);
+            }
+            done();
+        });
+    });
+});
+
 describe('Calculate Sku Variations', function () {
      var sc = {
             "attributes": [
@@ -42,4 +79,3 @@ describe('Calculate Sku Variations', function () {
         });
     });
 });
-

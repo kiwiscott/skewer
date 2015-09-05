@@ -6,11 +6,11 @@ var sku = require('../../lib/skuProcessor');
 describe('Sku Variations', function () {
   describe('Apply Default Rules', function () {
 
-    it.only('Rules should filter unwanted options', function (done) {
+    it('Rules should filter unwanted options', function (done) {
       sku.processValidSkus(sc, function (validSkus, err) {
         var skuCount = 23328;
-
-        validSkus.length.should.not.equal(0);
+        validSkus.length.should.not.equal(skuCount);
+        
         done();
       });
     });
@@ -79,6 +79,8 @@ var sc = {
      //DR
      { when: ["templateRegion", "APAC"], then: ["drDc", "Yokohama", "Tokyo", "SYD-Global", "SYD-Digital", "HK-Equinix", "HK-Cavendish"] },
      { when: ["templateRegion", "NA"], then: ["drDc", "Virginia", "EDC1", "Carlstadt", "Belleville", "RDC1", "MCC", "CDC2", "CDC1", "RDC2"] },
-     { when: ["templateRegion", "EMEA"], then: ["drDc", "OTDC2", "RDC2", "Basingstoke"] }
+     { when: ["templateRegion", "EMEA"], then: ["drDc", "OTDC2", "RDC2", "Basingstoke"] },
+     
+     { cannotBeSame: ["prodDc", "drDc"] }
   ]
 };
