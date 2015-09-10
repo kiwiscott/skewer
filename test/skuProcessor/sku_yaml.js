@@ -2,13 +2,14 @@
 var should = require('should');
 var sku = require('../../lib/skuProcessor');
 var fs = require('fs');
+var  yaml = require('js-yaml');
 
 
 describe('Sku Variations', function () {
-  describe('Apply Default Rules', function () {
+  describe('YAML Apply Default Rules', function () {
 
-    it('Rules should filter unwanted options', function (done) {
-      var skuSample = JSON.parse(fs.readFileSync('./test/skuProcessor/sku.json','utf8'));
+    it.only('Rules should filter unwanted options', function (done) {
+      var skuSample = yaml.safeLoad(fs.readFileSync('./test/skuProcessor/sku.yaml','utf8'));
       
       sku.processValidSkus(skuSample, function (validSkus, err) {
         var skuCount = 254772;

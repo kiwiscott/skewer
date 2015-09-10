@@ -16,9 +16,9 @@ describe('Calculate Sku Variations', function () {
          var skuCount =3;
               validSkus.length.should.equal(skuCount);
               done(); 
-       });
+       }); 
     });
-    
+     
     it('Three attibute should result in combination count', function (done) {
         var sc = {
           "attributes": [

@@ -14,7 +14,7 @@
     "should": "*"
   },
   "dependencies": {
-    "async": "^1.4.2",
+    "js-yaml": "^3.4.2",
     "log4js": "^0.6.26"
   }
 }

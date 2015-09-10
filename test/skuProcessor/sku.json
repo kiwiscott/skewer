@@ -1,0 +1,711 @@
+{
+    "serviceName" :"External Web", 
+    "variantName":"Apache/Tomcat/Oracle",
+    "attributes": [
+        {
+            "code": "appResiliency",
+            "values": [
+                {
+                    "value": "Standalone with DR"
+                },
+                {
+                    "value": "Local HA with DR"
+                }
+            ]
+        },
+        {
+            "code": "templateRegion",
+            "values": [
+                {
+                    "value": "NA"
+                },
+                {
+                    "value": "EMEA"
+                },
+                {
+                    "value": "APAC"
+                }
+            ]
+        },
+        {
+            "code": "dev",
+            "values": [
+                {
+                    "value": "Yes"
+                },
+                {
+                    "value": "No"
+                }
+            ]
+        },
+          {
+            "code": "devSize",
+            "values": [
+                {
+                    "value": "Medium"
+                },
+                {
+                    "value": "Large"
+                },
+                {
+                    "value": "X-Large"
+                },
+                {
+                    "value": "NA"
+                }
+            ]
+        },
+          {
+            "code": "devDc",
+            "values": [
+                {
+                    "value": "Yokohama"
+                },
+                {
+                    "value": "Virginia"
+                },
+                {
+                    "value": "Tokyo"
+                },
+                {
+                    "value": "EDC1"
+                },
+                {
+                    "value": "SYD-Global"
+                },
+                {
+                    "value": "SYD-Digital"
+                },
+                {
+                    "value": "Carlstadt"
+                },
+                {
+                    "value": "Belleville"
+                },
+                {
+                    "value": "RDC1"
+                },
+                {
+                    "value": "HK-Equinix"
+                },
+                {
+                    "value": "HK-Cavendish"
+                },
+                {
+                    "value": "OTDC2"
+                },
+                {
+                    "value": "MCC"
+                },
+                {
+                    "value": "CDC2"
+                },
+                {
+                    "value": "CDC1"
+                },
+                {
+                    "value": "RDC2"
+                },
+                {
+                    "value": "Basingstoke"
+                },
+                {
+                    "value": "NA"
+                }
+            ]
+        },
+          {
+            "code": "uat",
+            "values": [
+                {
+                    "value": "Yes"
+                },
+                {
+                    "value": "No"
+                }
+            ]
+        },
+          {
+            "code": "uatSize",
+            "values": [
+                {
+                    "value": "Medium"
+                },
+                {
+                    "value": "Large"
+                },
+                {
+                    "value": "X-Large"
+                },
+                {
+                    "value": "NA"
+                }
+            ]
+        },
+          {
+            "code": "uatDc",
+            "values": [
+                {
+                    "value": "Yokohama"
+                },
+                {
+                    "value": "Virginia"
+                },
+                {
+                    "value": "Tokyo"
+                },
+                {
+                    "value": "EDC1"
+                },
+                {
+                    "value": "SYD-Global"
+                },
+                {
+                    "value": "SYD-Digital"
+                },
+                {
+                    "value": "Carlstadt"
+                },
+                {
+                    "value": "Belleville"
+                },
+                {
+                    "value": "RDC1"
+                },
+                {
+                    "value": "HK-Equinix"
+                },
+                {
+                    "value": "HK-Cavendish"
+                },
+                {
+                    "value": "OTDC2"
+                },
+                {
+                    "value": "MCC"
+                },
+                {
+                    "value": "CDC2"
+                },
+                {
+                    "value": "CDC1"
+                },
+                {
+                    "value": "RDC2"
+                },
+                {
+                    "value": "Basingstoke"
+                },
+                {
+                    "value": "NA"
+                }
+            ]
+        },
+        {
+            "code": "prodDr",
+            "values": [
+                {
+                    "value": "Yes"
+                },
+                {
+                    "value": "No"
+                }
+            ]
+        },
+          {
+            "code": "prodDrSize",
+            "values": [
+                {
+                    "value": "Medium"
+                },
+                {
+                    "value": "Large"
+                },
+                {
+                    "value": "X-Large"
+                },
+                {
+                    "value": "NA"
+                }
+            ]
+        },
+          {
+            "code": "prodDc",
+            "values": [
+                {
+                    "value": "Yokohama"
+                },
+                {
+                    "value": "Virginia"
+                },
+                {
+                    "value": "Tokyo"
+                },
+                {
+                    "value": "EDC1"
+                },
+                {
+                    "value": "SYD-Global"
+                },
+                {
+                    "value": "SYD-Digital"
+                },
+                {
+                    "value": "Carlstadt"
+                },
+                {
+                    "value": "Belleville"
+                },
+                {
+                    "value": "RDC1"
+                },
+                {
+                    "value": "HK-Equinix"
+                },
+                {
+                    "value": "HK-Cavendish"
+                },
+                {
+                    "value": "OTDC2"
+                },
+                {
+                    "value": "MCC"
+                },
+                {
+                    "value": "CDC2"
+                },
+                {
+                    "value": "CDC1"
+                },
+                {
+                    "value": "RDC2"
+                },
+                {
+                    "value": "Basingstoke"
+                },
+                {
+                    "value": "NA"
+                }
+            ]
+        },
+        {
+            "code": "drDc",
+            "values": [
+                {
+                    "value": "Yokohama"
+                },
+                {
+                    "value": "Virginia"
+                },
+                {
+                    "value": "Tokyo"
+                },
+                {
+                    "value": "EDC1"
+                },
+                {
+                    "value": "SYD-Global"
+                },
+                {
+                    "value": "SYD-Digital"
+                },
+                {
+                    "value": "Carlstadt"
+                },
+                {
+                    "value": "Belleville"
+                },
+                {
+                    "value": "RDC1"
+                },
+                {
+                    "value": "HK-Equinix"
+                },
+                {
+                    "value": "HK-Cavendish"
+                },
+                {
+                    "value": "OTDC2"
+                },
+                {
+                    "value": "MCC"
+                },
+                {
+                    "value": "CDC2"
+                },
+                {
+                    "value": "CDC1"
+                },
+                {
+                    "value": "RDC2"
+                },
+                {
+                    "value": "Basingstoke"
+                },
+                {
+                    "value": "NA"
+                }
+            ]
+        }
+    ],
+    "descriptorX": "s => 'AWESOME'",
+    "descriptor": "function(sku){ var d = 'External Web Apache/Tomcat/Oracle ' + sku.appResiliency;if(sku.dev=='Yes'){ d+= ' With ' + sku.devSize + ' DEV ' + sku.devDc;} if(sku.uat=='Yes'){ d+= ' With ' + sku.uatSize + ' UAT ' + sku.uatDc;} if(sku.prodDr=='Yes'){d+= ' With ' + sku.prodDrSize + ' PROD/DR ' + sku.prodDc + ' DR ' + sku.drDc;}return d;}",
+    "rules": [
+        {
+            "when": [
+                "dev",
+                "Yes"
+            ],
+            "then": [
+                "devDc",
+                "Yokohama",
+                "Virginia",
+                "Tokyo",
+                "EDC1",
+                "SYD-Global",
+                "SYD-Digital",
+                "Carlstadt",
+                "Belleville",
+                "RDC1",
+                "HK-Equinix",
+                "HK-Cavendish",
+                "OTDC2",
+                "MCC",
+                "CDC2",
+                "CDC1",
+                "RDC2",
+                "Basingstoke"
+            ]
+        },
+        {
+            "when": [
+                "dev",
+                "No"
+            ],
+            "then": [
+                "devDc",
+                "NA"
+            ]
+        },
+        {
+            "when": [
+                "dev",
+                "Yes"
+            ],
+            "then": [
+                "devSize",
+                "Medium",
+                "Large",
+                "X-Large"
+            ]
+        },
+        {
+            "when": [
+                "dev",
+                "No"
+            ],
+            "then": [
+                "devSize",
+                "NA"
+            ]
+        },
+        {
+            "when": [
+                "templateRegion",
+                "APAC"
+            ],
+            "then": [
+                "devDc",
+                "Yokohama",
+                "Tokyo",
+                "SYD-Global",
+                "SYD-Digital",
+                "HK-Equinix",
+                "HK-Cavendish"
+            ]
+        },
+        {
+            "when": [
+                "templateRegion",
+                "NA"
+            ],
+            "then": [
+                "devDc",
+                "Virginia",
+                "EDC1",
+                "Carlstadt",
+                "Belleville",
+                "RDC1",
+                "MCC",
+                "CDC2",
+                "CDC1"
+            ]
+        },
+        {
+            "when": [
+                "templateRegion",
+                "EMEA"
+            ],
+            "then": [
+                "devDc",
+                "OTDC2",
+                "RDC2",
+                "Basingstoke"
+            ]
+        },
+        {
+            "when": [
+                "uat",
+                "Yes"
+            ],
+            "then": [
+                "uatDc",
+                "Yokohama",
+                "Virginia",
+                "Tokyo",
+                "EDC1",
+                "SYD-Global",
+                "SYD-Digital",
+                "Carlstadt",
+                "Belleville",
+                "RDC1",
+                "HK-Equinix",
+                "HK-Cavendish",
+                "OTDC2",
+                "MCC",
+                "CDC2",
+                "CDC1",
+                "RDC2",
+                "Basingstoke"
+            ]
+        },
+        {
+            "when": [
+                "uat",
+                "No"
+            ],
+            "then": [
+                "uatDc",
+                "NA"
+            ]
+        },
+        {
+            "when": [
+                "uat",
+                "Yes"
+            ],
+            "then": [
+                "uatSize",
+                "Medium",
+                "Large",
+                "X-Large"
+            ]
+        },
+        {
+            "when": [
+                "uat",
+                "No"
+            ],
+            "then": [
+                "uatSize",
+                "NA"
+            ]
+        },
+        {
+            "when": [
+                "templateRegion",
+                "APAC"
+            ],
+            "then": [
+                "uatDc",
+                "Yokohama",
+                "Tokyo",
+                "SYD-Global",
+                "SYD-Digital",
+                "HK-Equinix",
+                "HK-Cavendish"
+            ]
+        },
+        {
+            "when": [
+                "templateRegion",
+                "NA"
+            ],
+            "then": [
+                "uatDc",
+                "Virginia",
+                "EDC1",
+                "Carlstadt",
+                "Belleville",
+                "RDC1",
+                "MCC",
+                "CDC2",
+                "CDC1"
+            ]
+        },
+        {
+            "when": [
+                "templateRegion",
+                "EMEA"
+            ],
+            "then": [
+                "uatDc",
+                "OTDC2",
+                "RDC2",
+                "Basingstoke"
+            ]
+        },
+        {
+            "when": [
+                "prodDr",
+                "Yes"
+            ],
+            "then": [
+                "prodDc",
+                "Yokohama",
+                "Virginia",
+                "Tokyo",
+                "EDC1",
+                "SYD-Global",
+                "SYD-Digital",
+                "Carlstadt",
+                "Belleville",
+                "RDC1",
+                "HK-Equinix",
+                "HK-Cavendish",
+                "OTDC2",
+                "MCC",
+                "CDC2",
+                "CDC1",
+                "RDC2",
+                "Basingstoke"
+            ]
+        },
+        {
+            "when": [
+                "prodDr",
+                "No"
+            ],
+            "then": [
+                "prodDc",
+                "NA"
+            ]
+        },
+        {
+            "when": [
+                "prodDr",
+                "Yes"
+            ],
+            "then": [
+                "prodDrSize",
+                "Medium",
+                "Large",
+                "X-Large"
+            ]
+        },
+        {
+            "when": [
+                "prodDr",
+                "No"
+            ],
+            "then": [
+                "prodDrSize",
+                "NA"
+            ]
+        },
+        {
+            "when": [
+                "templateRegion",
+                "APAC"
+            ],
+            "then": [
+                "prodDc",
+                "Yokohama",
+                "Tokyo",
+                "SYD-Global",
+                "SYD-Digital",
+                "HK-Equinix",
+                "HK-Cavendish"
+            ]
+        },
+        {
+            "when": [
+                "templateRegion",
+                "NA"
+            ],
+            "then": [
+                "prodDc",
+                "Virginia",
+                "EDC1",
+                "Carlstadt",
+                "Belleville",
+                "RDC1",
+                "MCC",
+                "CDC2",
+                "CDC1"
+            ]
+        },
+        {
+            "when": [
+                "templateRegion",
+                "EMEA"
+            ],
+            "then": [
+                "prodDc",
+                "OTDC2",
+                "RDC2",
+                "Basingstoke"
+            ]
+        },
+        {
+            "when": [
+                "templateRegion",
+                "APAC"
+            ],
+            "then": [
+                "drDc",
+                "Yokohama",
+                "Tokyo",
+                "SYD-Global",
+                "SYD-Digital",
+                "HK-Equinix",
+                "HK-Cavendish"
+            ]
+        },
+        {
+            "when": [
+                "templateRegion",
+                "NA"
+            ],
+            "then": [
+                "drDc",
+                "Virginia",
+                "EDC1",
+                "Carlstadt",
+                "Belleville",
+                "RDC1",
+                "MCC",
+                "CDC2",
+                "CDC1"
+            ]
+        },
+        {
+            "when": [
+                "templateRegion",
+                "EMEA"
+            ],
+            "then": [
+                "drDc",
+                "OTDC2",
+                "RDC2",
+                "Basingstoke"
+            ]
+        },
+          {
+            "cannotBeSame": [
+                "prodDc",
+                "drDc"
+            ]
+        }
+    ]
+}
