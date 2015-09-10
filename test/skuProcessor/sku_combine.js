@@ -7,10 +7,10 @@ describe('Calculate Sku Variations', function () {
   describe('No Rules', function () {
 
     it('One attibute should result in simple count', function (done) {
-        var sc = {
-            "attributes" :[
-              {"code": "alpha", "values": [{ "value": "A" },{ "value": "B" },{ "value": "C" }]}
-          ] };
+          var sc = {
+            "attributes": [
+              { "code": "alpha", "values": [{ "value": "A" }, { "value": "B" }, { "value": "C" }] }
+        ]};
 
        skuProcessor.processValidSkus(sc,function(validSkus){
          var skuCount =3;
@@ -21,11 +21,11 @@ describe('Calculate Sku Variations', function () {
     
     it('Three attibute should result in combination count', function (done) {
         var sc = {
-            "attributes" :[
-              {"code": "alpha", "values": [{ "value": "A" },{ "value": "B" },{ "value": "C" }]},
-              {"code": "numeric", "values": [{ "value": "1" },{ "value": "2" },{ "value": "3" }]},
-              {"code": "theta", "values": [{ "value": "X" },{ "value": "Y" },{ "value": "Z" }]}
-          ] };
+          "attributes": [
+            { "code": "alpha", "values": [{ "value": "A" }, { "value": "B" }, { "value": "C" }] },
+            { "code": "beta", "values": [{ "value": "1" }, { "value": "2" }, { "value": "3" }] },
+            { "code": "gamma", "values": [{ "value": "1" }, { "value": "2" }, { "value": "3" }] }
+        ]};
                     
           skuProcessor.processValidSkus(sc,function(validSkus){
             var skuCount =27;

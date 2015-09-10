@@ -4,24 +4,55 @@ var should = require('should');
 var skuProcessor = require('../../lib/skuProcessor');
 var log = require('log4js').getLogger("skurulestest");
 
-describe('Calculate Sku Variations', function () {
-    var sc = {
-        "attributes": [
-            { "code": "alpha", "values": [{ "value": "A" }, { "value": "B" }, { "value": "C" }] },
-            { "code": "numeric", "values": [{ "value": "1" }, { "value": "2" }, { "value": "3" }] }
-        ],
-        "rules": [
-            {
-                attribute: "numeric",
-                tests: [
-                    { when: "x-alpha = 'A'", then: ["1", "2"] },
-                    { when: "x-alpha = 'B'", then: ["2", "3"] },
-                    { when: "x-alpha = 'C'", then: ["3"] }
-                ]
-            }
-        ]
-    };
+describe('Cannot Be Same Rule', function () {
+     var sc = {
+            "attributes": [
+                { "code": "alpha", "values": [{ "value": "A" }, { "value": "B" }, { "value": "C" }] },
+                { "code": "numeric", "values": [{ "value": "A" }, { "value": "B" }, { "value": "C" }] }
+            ],
+            "rules": [
+                { cannotBeSame: ["alpha", "numeric"] }
+            ]};
+                       
 
+    it('Rules should filter same options out', function (done) {
+        skuProcessor.processValidSkus(sc, function (validSkus) {
+            var skuCount = 6;
+            validSkus.length.should.equal(skuCount);
+            done();
+        });
+    });
+
+    it('Sku Matches should be', function (done) {
+        skuProcessor.processValidSkus(sc, function (validSkus) {
+            var expected = [
+                { alpha: 'A', numeric: 'B' },
+                { alpha: 'A', numeric: 'C' },
+                { alpha: 'B', numeric: 'A' },
+                { alpha: 'B', numeric: 'C' },
+                { alpha: 'C', numeric: 'A' },
+                { alpha: 'C', numeric: 'B' }];
+
+            for (var i = 0; i < expected.length; i++) {
+                validSkus.should.containEql(expected[i]);
+            }
+            done();
+        });
+    });
+});
+
+describe('Calculate Sku Variations', function () {
+     var sc = {
+            "attributes": [
+                { "code": "alpha", "values": [{ "value": "A" }, { "value": "B" }, { "value": "C" }] },
+                { "code": "numeric", "values": [{ "value": "1" }, { "value": "2" }, { "value": "3" }] }
+            ],
+            "rules": [
+                { when: ["alpha", "A"], then: ["numeric", "1", "2"] },
+                { when: ["alpha", "B"], then: ["numeric", "2", "3"] },
+                { when: ["alpha", "C"], then: ["numeric", "3"] }
+            ]};
+                       
 
     it('Rules should filter unwanted options', function (done) {
         skuProcessor.processValidSkus(sc, function (validSkus) {
@@ -48,4 +79,3 @@ describe('Calculate Sku Variations', function () {
         });
     });
 });
-

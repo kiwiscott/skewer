@@ -4,7 +4,7 @@
   "description": "Sku Parser",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require should --reporter list --ui bdd --recursive --timeout 750000",
+    "test": "mocha --require should --reporter spec --ui bdd --recursive --timeout 750000",
     "test-debug": "mocha  --debug-brk --require should --reporter spec --ui bdd --recursive"
   },
   "author": "",
